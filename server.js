@@ -40,7 +40,7 @@ app.get('/about', (request, response) => {
   });
 });
 app.get('/experience', (request, response) => {
-  response.send({
+  response.render({
     pageTitle: 'Experience Page',
     message:'This is the experience page'
   });
