@@ -1,0 +1,23 @@
+{
+  "name": "03.node-webserver",
+  "version": "1.0.0",
+  "description": "Complete NodeJS course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/manuelsanti1986/completeNodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuelsanti1986/completeNodejs/issues"
+  },
+  "homepage": "https://github.com/manuelsanti1986/completeNodejs#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "hbs": "^4.0.1"
+  }
+}
