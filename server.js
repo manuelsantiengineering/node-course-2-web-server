@@ -40,7 +40,7 @@ app.get('/about', (request, response) => {
   });
 });
 app.get('/experience', (request, response) => {
-  response.render({
+  response.render('experience.hbs',{
     pageTitle: 'Experience Page',
     message:'This is the experience page'
   });
