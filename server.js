@@ -18,12 +18,7 @@ app.use((request, response, next)=>{ //next tells express when the Middleware fu
   });
   next();
 });
-// app.use((request, response)=>{ //next tells express when the Middleware function is done
-//   response.render('maintenance.hbs',{
-//     pageTitle: 'Maintenance',
-//     message:'The page is under construction'
-//   });
-// });
+
 app.use(express.static(__dirname+'/public'));//Middleware that tells express how to behave
 
 hbs.registerHelper('getCurrentYear', () => {
@@ -32,21 +27,24 @@ hbs.registerHelper('getCurrentYear', () => {
 hbs.registerHelper('screamIt', (text)=> {
   return text.toUpperCase();
 })
-
 app.get('/', (request, response) => {
   response.render('home.hbs', {
     pageTitle: 'Home Page',
     message:'This is the home page'
   });
 });
-
 app.get('/about', (request, response) => {
   response.render('about.hbs', {
     pageTitle: 'About Page',
     message:'This is the about page'
   });
 });
-
+app.get('/experience', (request, response) => {
+  response.send({
+    pageTitle: 'Experience Page',
+    message:'This is the experience page'
+  });
+});
 app.get('/bad', (request, response) => {
   response.send({
     errorMessage:'Not able to connect'
