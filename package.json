@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/manuelsanti1986/completeNodejs#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.4",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "request": "^2.81.0"
   }
 }
