@@ -1,3 +1,13 @@
+/*
+  To push into horok:
+  1) git add .
+  2) git commit -m 'message for git repository'
+  3) git push origin
+  4) git push heroku
+  5) heroku open (or just go the the website in the console output)
+*/
+
+
 
 const express = require('express');
 const hbs = require('hbs');//handlebars
@@ -43,6 +53,12 @@ app.get('/experience', (request, response) => {
   response.render('experience.hbs',{
     pageTitle: 'Experience Page',
     message:'This is the experience page'
+  });
+});
+app.get('/projects', (request, response) => {
+  response.render('projects.hbs',{
+    pageTitle: 'Projects Page',
+    message:'This is the projects page'
   });
 });
 app.get('/bad', (request, response) => {
