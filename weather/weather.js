@@ -25,12 +25,13 @@ var getAddress = (address) => {
 }
 
 
-var getWeather = (latitude, longitude) => {
+var getWeather = (latitude, longitude, address) => {
   var weatherURL = `https://api.darksky.net/forecast/838420834287d2da59289c6eeaf05a1d/${latitude},${longitude}`;
 
   return new Promise( (resolve, reject) => {
     axios.get(weatherURL)
     .then( (response) => {
+      console.log(response.data);
         if (response.data.latitude === latitude && response.data.longitude === longitude) {
               var weatherData = {
                 temperature:response.data.currently.temperature,
@@ -38,6 +39,7 @@ var getWeather = (latitude, longitude) => {
                 precipType:response.data.currently.precipType,
                 precipProbability:response.data.currently.precipProbability,
                 summary:response.data.currently.summary,
+                address:address,
                 fetchURL:weatherURL
               };
               resolve(weatherData);

@@ -55,15 +55,14 @@ app.get('/weather', (request, response) => {
   weather.getAddress(address)
   .then( (locationData) => {
       console.log(`Afuera: ${JSON.stringify(locationData)}`);
-      var wheatherData = weather.getWeather(locationData.latitude, locationData.longitude)
-      wheatherData.address = locationData.address;
-      return (wheatherData);
+      var weatherData = weather.getWeather(locationData.latitude, locationData.longitude, locationData.address)
+      return (weatherData);
   })
-  .then( (wheaterData) => {
-    wheaterData.pageTitle = 'Weather Page';
-    wheaterData.message = 'This is the weather page';
-    console.log(wheaterData);
-    response.render('weather.hbs', wheaterData);
+  .then( (weatherData) => {
+    weatherData.pageTitle = 'Weather Page';
+    weatherData.message = 'This is the weather page';
+    console.log(weatherData);
+    response.render('weather.hbs', weatherData);
   })
   .catch( (error) => {
     console.log(error);
